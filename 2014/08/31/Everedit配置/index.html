@@ -1,0 +1,360 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Everedit配置 | pureal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="hyf">
+    
+    <meta name="description" content="最新版目前并无有效的破解方法
+
+可以用 Restorator2007 打开 everedit.exe 文件，找到图示的对话框214，删除，问题就解决了。
+Everedit去注册提醒补丁.exe，原理未知，有效性未知。tweak the time for test。。。应该是调整试用的时间，类似于修改">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="pureal" title="pureal"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="pureal">pureal</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:pureal.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/08/31/Everedit配置/" title="Everedit配置" itemprop="url">Everedit配置</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://pureal.github.io" title="hyf">hyf</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-08-31T02:22:19.000Z" itemprop="datePublished">8月 31 2014</time>
+    更新日期:<time datetime="2015-05-31T08:57:03.000Z" itemprop="dateModified">5月 31 2015</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最新版目前并无有效的破解方法"><span class="toc-number">1.</span> <span class="toc-text">最新版目前并无有效的破解方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Fortran语法高亮文件fortran-mac"><span class="toc-number">2.</span> <span class="toc-text">配置Fortran语法高亮文件fortran.mac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序更新说明"><span class="toc-number">3.</span> <span class="toc-text">程序更新说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Markdown"><span class="toc-number">4.</span> <span class="toc-text">配置Markdown</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#修改一些语法高亮"><span class="toc-number">4.1.</span> <span class="toc-text">修改一些语法高亮</span></a></li></ol></li></ol>
+		</div>
+		
+		<h3 id="最新版目前并无有效的破解方法">最新版目前并无有效的破解方法</h3>
+<ol>
+<li>可以用 Restorator2007 打开 everedit.exe 文件，找到图示的对话框214，删除，问题就解决了。</li>
+<li>Everedit去注册提醒补丁.exe，原理未知，有效性未知。tweak the time for test。。。应该是调整试用的时间，类似于修改系统时间之类的。</li>
+<li>EverEdit_my.exe是16进制查找080000751D8D4C2410515756508D4DFCC744242001000000E8，共有连续的好几处，将第四处至第五处中间的连续三处，把75改成EB，不知行不行。[winhex查找080000751D8D4C2410515756508D4D，找到倒数第四个，把75改成EB，连续三处。就不会显示未注册了吧。]</li>
+<li>ywzhaiqi 发表于 2013-11-1 15:17 怎么去除标题栏的 “NOT REGISTERED”？x8681 EC 34 01 00 00 56 -&gt; C2 10 00 90 90 90 56</li>
+</ol>
+<h3 id="配置Fortran语法高亮文件fortran-mac">配置Fortran语法高亮文件fortran.mac</h3>
+<ul>
+<li>将第11行注释掉：<br>  ‘Set rComment1=ft.CreateRegion(COLOR_COMMENT1, “^c”, “$”, False )</li>
+<li>将第29行注释掉：<br>  ‘ft.AddRegion( rComment1 )</li>
+<li>增加<br>  ‘function<br>  ft.AddItem( ft.CreateItem(COLOR<em>FUNCTION, “(?&lt;=call\b\s+)([A-Za-z</em>][A-Za-z0-9_]<em>)\s</em>(?:(() )?)”, False) )</li>
+<li>将数字项替换为：<br>  ‘number<br>  ft.AddItem( ft.CreateItem(COLOR<em>NUMBER, “\b[+-]?[0-9]+.?[0-9a-zA-Z</em>]*\b”, False) )</li>
+<li>改动折叠规则<br><code>ft.FoldText &quot;\b((?&lt;!end\s)do|(?&lt;!end\s)module|(?&lt;!end\s)function|(?&lt;!end\s)subroutine|(?&lt;!end\s)program)\b&quot;, False,&quot;\b(end\s?(do|module|function|subroutine|program)|end(?!\s?(do|module|function|subroutine|program|if)))\b&quot;, False</code></li>
+</ul>
+<p><strong>为Fortran文件配置独立主题ft.SetTheme “Fortran.ini”</strong></p>
+<blockquote>
+<p>求解此正则表达式含义：(?&lt;=^[length=)(\d+)(?=])<br>取 [length=123] 的数字: 123, 仅取数字，其它不取</p>
+<p>正则表达式 .<em>? 是什么意思啊？<br>?的一个用法1楼已经说了，匹配0次或1次。<br>但是?还有第二个含义，作为正则的懒惰模式。<br>正则有两种模式，一种为贪婪模式（默认），另外一种为懒惰模式，以下为例：<br>（abc）dfe（gh）<br>对上面这个字符串使用（.</em>）将会匹配整个字符串，因为正则默认是尽可能多的匹配。<br>虽然（abc）满足我们的表达式，但是（abc）dfe（gh）也同样满足，所以正则会匹配多的那个。<br>如果我们只想匹配（abc）和（gh）就需要用到以下的表达式<br>（.<em>?）<br>在重复元字符</em>或者+后面跟一个?，作用就是在满足的条件下尽可能少匹配。</p>
+</blockquote>
+<h3 id="程序更新说明">程序更新说明</h3>
+<p>将完整便携版下载后与旧的原版对比<code>C+B</code>,将不同的文件同步替换到TC目录里的EE中。</p>
+<h3 id="配置Markdown">配置Markdown</h3>
+<ul>
+<li>Markdown.ini<br>  Comment1=#F9F2F4,#C7254E<br>  Comment2=#F9F2F4,#C7254E</li>
+<li>Markdown.mac<br>  ‘Set i_mdcodeline=mk.CreateItem(COLOR_COMMENT1, “<code>.+?</code>“, False)<br>  Set r_mdcodeblock=mk.CreateRegion(COLOR_COMMENT2, “^</li>
+</ul>
+<figure class="highlight |^`" ,"=""><figcaption><span>"^```|`", False)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="code">	'mk.AddItem( i_mdcodeline )</span></div><div class="line"></div><div class="line">###Everedit中新增ctrl+E，为剪贴板历史</div><div class="line"></div><div class="line">###为适应新版，折叠规则变为：</div><div class="line">ft.FoldText "^\s*\b((?&lt;!end\s)module|(?&lt;!end\s)function|(?&lt;!end\s)subroutine|(?&lt;!end\s)program)\b", False,"^\s*\b(end\s?(module|function|subroutine|program)|end(?!\s?(do|module|function|subroutine|program|if|forall)))\b", False</div><div class="line">多加了^\s*，^表示匹配行首，\s*表示匹配\s零次或多次</div><div class="line"></div><div class="line">##2015年5月30日</div><div class="line">####修改ee默认md模式为marked</div><div class="line">&gt; 主菜单→工具→设置→语法着色，选定您的语法文件，然后点击高级，绑定即可</div><div class="line"></div><div class="line">####修改marked语法文件，使得code红色高亮</div><div class="line">加入</div><div class="line"><span class="code">`color: #c7254e;background-color: #f9f2f4;`</span></div><div class="line">删除</div><div class="line"><span class="code">`border:1px solid #ccc;`</span></div><div class="line">####给html加上目录</div><div class="line">1. 修改<span class="code">`const.js`</span>中的</div><div class="line"><span class="smartquote">`&lt;script type='</span>text/javascript'&gt;\n" <span class="code">+ prettify_js +</span> "\n\`</div><div class="line">为</div><div class="line"><span class="smartquote">`&lt;script type='</span>text/javascript'&gt;\n" <span class="code">+ prettify_js +</span> "\n" <span class="code">+ generated_toc1 +</span> "\n\`</div><div class="line">将</div><div class="line"><span class="code">`&lt;body&gt;\n";`</span></div><div class="line">改为</div><div class="line"><span class="smartquote">`&lt;div id='</span>generated-toc'&gt;&lt;/div&gt;\n";`</div><div class="line">2. 将<span class="code">`toc.js`</span>中的文件内容复制到<span class="code">`http://tool.oschina.net/jscompress`</span> 中压缩，</div><div class="line"><span class="code">   然后将压缩后的内容复制到`http://www.atool.org/chinese2unicode.php` 转换为`\u0067`型的unicode文本，</span></div><div class="line"><span class="code">   在`min_source.js`文件中新建变量`var generated_toc = "以上转换完的内容";`</span></div><div class="line"><span class="code">   </span></div><div class="line">####使目录中的中文也能跳转</div><div class="line">注释掉marked.js中的第791行到794行</div></pre></td></tr></table></figure>
+
+<pre><code>/*+ <span class="string">' id="'</span>
++ <span class="keyword">this</span>.options.headerPrefix
++ raw.toLowerCase().replace(<span class="regexp">/[^\w]+/g</span>, <span class="string">'-'</span>)
++ <span class="string">'"&gt;'</span>*/
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">添加一行</div></pre></td></tr></table></figure>
+
+<pre><code>+ <span class="string">'&gt;'</span>
+</code></pre><p>```</p>
+<h4 id="修改一些语法高亮">修改一些语法高亮</h4>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/技术/">技术</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://pureal.github.io/2014/08/31/Everedit配置/" data-title="Everedit配置 | pureal" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/08/31/TC配置/" title="TC配置">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  TC配置</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/08/31/hello-world/"  title="Hello World">
+ <strong>NEXT:</strong><br/> 
+ <span>Hello World
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最新版目前并无有效的破解方法"><span class="toc-number">1.</span> <span class="toc-text">最新版目前并无有效的破解方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Fortran语法高亮文件fortran-mac"><span class="toc-number">2.</span> <span class="toc-text">配置Fortran语法高亮文件fortran.mac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序更新说明"><span class="toc-number">3.</span> <span class="toc-text">程序更新说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Markdown"><span class="toc-number">4.</span> <span class="toc-text">配置Markdown</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#修改一些语法高亮"><span class="toc-number">4.1.</span> <span class="toc-text">修改一些语法高亮</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/技术/" title="技术">技术<sup>3</sup></a></li>
+		
+			<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="http://pureal.github.io" target="_blank" title="hyf">hyf</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"pureal"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>
