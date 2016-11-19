@@ -94,18 +94,6 @@
 		
 		<h3 id="在新电脑上的博客配置">在新电脑上的博客配置</h3>
 <ol>
-<li>安装Git,<a href="http://msysgit.github.io/" target="_blank" rel="external">http://msysgit.github.io/</a></li>
-<li>安装Node.js,<a href="http://nodejs.org/" target="_blank" rel="external">http://nodejs.org/</a></li>
-<li>安装hexo 利用 npm 命令即可安装。（在任意位置点击鼠标右键，选择Git bash）<code>npm install -g hexo</code></li>
-<li>在你喜爱的文件夹下（如H:\hexo），执行以下指令(在H:\hexo内点击鼠标右键，选择Git bash)，<code>hexo init</code>,<code>npm install</code>,Hexo 即会自动在目标文件夹建立网站所需要的所有文件。</li>
-<li>现在我们已经搭建起本地的hexo博客了，执行以下命令(在H:\hexo)，<code>hexo generate</code>,<code>hexo server</code>然后到浏览器输入localhost:4000看看。好了，至此，本地博客已经搭建起来了，只是本地哦，别人看不到的。下面，我们要部署到Github。</li>
-<li>前期步骤详见链接1.<br> 设置用户信息（适用于https方式，ssh方式也需要）<br> <code>git config --global user.name &quot;hyf&quot;</code>//用户名<br> <code>git config --global user.email  &quot;hyf278@126.com&quot;</code>//填写自己的邮箱<br> 会生成.gitconfig文件：内容是<br> [user]<br> name = hyf<br> email = hyf278@126.com</li>
-<li>如果使用：<code>git@github.com:pureal/pureal.github.io.git</code>,需要生成SSH，<a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys/</a> ：<br> <code>ssh-keygen -t rsa -C &quot;hyf278@126.com&quot;</code><br> Add your SSH key to GitHub<br> <code>ssh -T git@github.com</code><br>如果使用：<code>https://github.com/pureal/pureal.github.io.git</code> （推荐使用https）,<br> <code>git config --global credential.helper wincred</code><br> 会在.gitconfig文件中加入<br> [credential]<br> helper = wincred<br> 表示生成credentials文件，只需一次输入用户名和密码</li>
-<li>至此设置完毕。<code>hexo generate</code>,<code>hexo deploy</code>,生成、发布博客</li>
-<li>如果以上方法行不通，那么备份<code>theme文件夹</code>,<code>source文件夹</code>，<code>_config.yml</code>（需要定期备份这三个文件）, <code>hexo init</code>重新部署</li>
-</ol>
-<h3 id="修改主题">修改主题</h3>
-<p>-你好，你的主题Jacman，怎么把页面中最上方那篇蓝色区域的高度减小一些。也就是可不可以把首页，归档几个链接与Jack’s Blog 同一排，以达到减小蓝色区域的高度。没有玩过前端，表示，找代码改，很痛苦。在 css/_partial/header.styl 文件里，找到 header nav 项，修改里面的 margin-top 属性为-3即可。<br>-请问怎么修改页面下面的头像覆盖 jacman/source/img 下的 author.jpg 即可</p>
 <h3 id="链接">链接</h3>
 <p><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">http://zipperary.com/2013/05/29/hexo-guide-3/</a><br><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">http://ibruce.info/2013/11/22/hexo-your-blog/</a><br><a href="http://yangjian.me/workspace/introducing-pacman-theme/" target="_blank" rel="external">http://yangjian.me/workspace/introducing-pacman-theme/</a><br><a href="http://wuchong.me/categories/Hexo/" target="_blank" rel="external">http://wuchong.me/categories/Hexo/</a><br><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys</a><br><a href="http://blog.miniasp.com/post/2014/05/22/Credential-Store-for-Git-HTTP-HTTPS.aspx" target="_blank" rel="external">http://blog.miniasp.com/post/2014/05/22/Credential-Store-for-Git-HTTP-HTTPS.aspx</a></p>
   
